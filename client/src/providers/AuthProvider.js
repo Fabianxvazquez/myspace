@@ -15,6 +15,7 @@ export class AuthProvider extends React.Component {
       })
     .catch( res => {
       console.log(res);
+      alert('Failed to Register')
     })
   }
   
@@ -26,8 +27,9 @@ export class AuthProvider extends React.Component {
       })
       .catch( res => {
         console.log(res);
+        alert('Failed to Login')
       })
-  }
+    }
   
   handleLogout = (history) => {
     axios.delete("/api/auth/sign_out")
@@ -38,7 +40,7 @@ export class AuthProvider extends React.Component {
       .catch( res => {
         console.log(res);
       })
-  }
+    }
   
   render() {
     return (
