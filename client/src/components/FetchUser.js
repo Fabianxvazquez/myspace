@@ -1,27 +1,25 @@
 import React from 'react';
 import axios from 'axios';
-import { AuthConsumer } from "../providers/AuthProvider"
+import { AuthConsumer, } from "../providers/AuthProvider";
 
 class FetchUser extends React.Component {
-
   state = { loaded: false, };
 
   componentDidMount() {
-
     const { auth: { authenticated, setUser, }, } = this.props;
 
     if (authenticated) {
       this.loaded();
     } else {
       if (this.checkLocalToken()) {
-        axios.get('api/auth/validate_token')
-        .then(res => {
-          setUser(res.data.data);
-          this.loaded();
-        })
-        .catch( res => {
-          this.loaded();
-        })
+        axios.get('/api/auth/validate_token')
+          .then( res => {
+            setUser(res.data.data);
+            this.loaded();
+          })
+          .catch( res => {
+            this.loaded();
+          })
       } else {
         this.loaded();
       }
