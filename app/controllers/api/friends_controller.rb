@@ -1,7 +1,7 @@
 class Api::FriendsController < ApplicationController
   before_action :authenticate_user!
   def index
-    render json: User.random_friend(current_user.linked_friends)
+    render json: User.random_friend(current_user.liked_friends)
   end
 
   def update
