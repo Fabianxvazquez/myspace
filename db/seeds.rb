@@ -10,7 +10,7 @@
 200.times do
   name = Faker::Name.name
   occupation = Faker::Job.title
-  avatar = Faker::Avatar.image(slug: name, size: "50x50", format: "png", set: 'set4')
+  avatar = Faker::Avatar.image(slug: name, size: "200x200", format: "png", set: 'set7')
   gender = Faker::Gender.type
   Friend.create(name: name, occupation: occupation, avatar: avatar, gender: gender)
 end
