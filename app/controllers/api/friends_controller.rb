@@ -5,7 +5,11 @@ class Api::FriendsController < ApplicationController
   end
 
   def update
-    current_user.liked_friends << param[:id].to_i
+    current_user.liked_friends << params[:id].to_i
     current_user.save
+  end
+
+  def my_friends
+    render json: User.liked(current_user.liked_friends)
   end
 end
