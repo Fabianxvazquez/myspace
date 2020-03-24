@@ -16,7 +16,7 @@ class MyFriends extends React.Component {
     return (
       <Card.Group itemsPerRow={4}>
         { friends.map( friend => 
-        <Card>
+        <Card key={friend.id}>
           <Image src={friend.avatar} />
           <Card.Content>
             <Card.Header>{friend.name}</Card.Header>
