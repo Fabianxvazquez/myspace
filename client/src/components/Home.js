@@ -1,23 +1,22 @@
 import React from 'react';
-import { Header, Form, TextArea, Button } from 'semantic-ui-react';
+import { Header, Form, Button } from 'semantic-ui-react';
 
 class Home extends React.Component {
-  state = { posts: '' }
+  state = { posts: '' };
 
-  render (){
-    
-  return(
-    <div>
-    <Form>
-    <Header>Your Posts</Header>
-    <TextArea placeholder='Write a post ' />
-    <br />
-    <br />
-    <Button color='green' >Submit</Button>
-    <Button color='red'>Delete</Button>
-    </Form>
-    </div>
-  )
+  render() {
+    return (
+      <div>
+        <Form>
+          <Header>Your Posts</Header>
+          <Form.Field >
+            <input placeholder="write a post"/>
+          </Form.Field>
+          <Button color="green">Submit</Button>
+          <Button color="red">Delete</Button> 
+        </Form>
+      </div>
+    );
   }
 }
 
@@ -26,4 +25,3 @@ class Home extends React.Component {
 //Text Form
 
 export default Home;
-
