@@ -11,6 +11,8 @@ import FetchUser from './components/FetchUser'
 import ProtectedRoute from './components/ProtectedRoute'
 import MyFriends from './components/MyFriends'
 
+import FriendRequests from './components/FriendRequests'
+
 
 const App = () => (
   <>
@@ -22,6 +24,7 @@ const App = () => (
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <ProtectedRoute exact path='/my_friends' component={MyFriends} />
+        <ProtectedRoute exact path='/friend_requests' component={FriendRequests} />
         <Route component={NoMatch} />
       </Switch>
     </Container>
